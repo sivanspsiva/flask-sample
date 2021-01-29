@@ -10,4 +10,10 @@ workflows:
   build:
     # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
+      dockerize:
+        step:
+          - run:
+              name: Install Dev Dependencies
+              command: |
+                  pip --version
+                  pip install -r requirements.txt
