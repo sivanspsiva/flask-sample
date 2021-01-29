@@ -10,9 +10,10 @@ workflows:
   build:
     # Run the welcome/run job in its own container
     jobs:
-        steps:
-          - run:
-              name: Install Dev Dependencies
-              command: |
-                  pip --version
-                  pip install -r requirements.txt
+        build:
+          steps:
+           - checkout
+           - run:
+               name: Install Python deps in a venv
+               command: |
+               pip install -r requirements/dev.txt
