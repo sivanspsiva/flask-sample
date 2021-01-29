@@ -10,7 +10,6 @@ workflows:
   build:
     # Run the welcome/run job in its own container
     jobs:
-      dockerize:
         steps:
           - run:
               name: Install Dev Dependencies
